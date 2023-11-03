@@ -99,20 +99,20 @@ def handle(event: Event) -> None:
         num1 += str_input
         return
     
-
-    match op:
-        case "+":
-            r = float(num1) + float(num2)
-        case "-":
-            r = float(num1) - float(num2)
-        case "*":
-            r = float(num1) * float(num2)    
-        case "/":
-            r = float(num1) / float(num2)    
-    
-    pantalla.delete(0, END)
-    num1, num2, op = "", "", ""
-    pantalla.insert(0, str(r))
+    if (num1 and num2):
+        match op:
+            case "+":
+                r = float(num1) + float(num2)
+            case "-":
+                r = float(num1) - float(num2)
+            case "*":
+                r = float(num1) * float(num2)    
+            case "/":
+                r = float(num1) / float(num2)    
+        
+        pantalla.delete(0, END)
+        num1, num2, op = "", "", ""
+        pantalla.insert(0, str(r))
 
 
 # Events
